@@ -1,9 +1,7 @@
-"""
-Coercion and conversion functions for Network objects.
-
-Provides functions to convert networks to/from matrices, edge lists,
-and DataFrames, similar to R's as.matrix.network, as.edgelist, etc.
-"""
+# Coercion and conversion functions for Network objects.
+#
+# Provides functions to convert networks to/from matrices, edge lists,
+# and DataFrames, similar to R's as.matrix.network, as.edgelist, etc.
 
 using SparseArrays
 

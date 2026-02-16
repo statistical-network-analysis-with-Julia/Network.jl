@@ -1,9 +1,7 @@
-"""
-I/O functions for Network objects.
-
-Provides functions to read and write networks in various formats,
-including Pajek format commonly used in network analysis.
-"""
+# I/O functions for Network objects.
+#
+# Provides functions to read and write networks in various formats,
+# including Pajek format commonly used in network analysis.
 
 # ============================================================================
 # Pajek Format

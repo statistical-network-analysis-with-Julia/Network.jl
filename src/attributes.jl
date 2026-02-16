@@ -1,9 +1,7 @@
-"""
-Attribute handling for Network objects.
-
-Provides functions to get, set, list, and delete vertex, edge, and network-level
-attributes, similar to R's network package attribute functions.
-"""
+# Attribute handling for Network objects.
+#
+# Provides functions to get, set, list, and delete vertex, edge, and network-level
+# attributes, similar to R's network package attribute functions.
 
 # ============================================================================
 # Vertex Attributes

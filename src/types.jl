@@ -1,9 +1,7 @@
-"""
-Core network types for the Network.jl package.
-
-Provides network data structures that implement Graphs.jl's AbstractGraph
-interface while supporting vertex/edge attributes like R's network package.
-"""
+# Core network types for the Network.jl package.
+#
+# Provides network data structures that implement Graphs.jl's AbstractGraph
+# interface while supporting vertex/edge attributes like R's network package.
 
 """
     AbstractNetwork{T} <: Graphs.AbstractGraph{T}

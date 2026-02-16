@@ -39,7 +39,10 @@ export as_matrix, as_adjacency_matrix, as_edgelist, as_dataframe
 export network_from_matrix, network_from_edgelist
 
 # I/O
-export read_pajek, write_pajek
+export read_pajek, write_pajek, write_graphml, write_edgelist_csv
+
+# DataFrame conversion
+export network_from_dataframe
 
 # Utilities
 export network_size, network_density, network_edgecount
@@ -47,6 +50,17 @@ export permute_vertices, get_neighborhood, get_induced_subgraph
 
 # Include source files
 include("types.jl")
+
+# Workaround for Julia 1.12: the struct `Network` shadows the module name,
+# causing doc!(Type{Network}, ...) instead of doc!(Module, ...) for subsequent
+# docstrings. Redirect these calls to the module.
+let mod = @__MODULE__
+    Base.Docs.doc!(::Type{Network}, b::Base.Docs.Binding, str::Base.Docs.DocStr) =
+        Base.Docs.doc!(mod, b, str)
+    Base.Docs.doc!(::Type{Network}, b::Base.Docs.Binding, str::Base.Docs.DocStr, sig) =
+        Base.Docs.doc!(mod, b, str, sig)
+end
+
 include("attributes.jl")
 include("graphs_interface.jl")
 include("coercion.jl")

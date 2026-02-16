@@ -1,9 +1,7 @@
-"""
-Graphs.jl AbstractGraph interface implementation for Network types.
-
-This allows Network objects to be used with all Graphs.jl algorithms
-and functions seamlessly.
-"""
+# Graphs.jl AbstractGraph interface implementation for Network types.
+#
+# This allows Network objects to be used with all Graphs.jl algorithms
+# and functions seamlessly.
 
 import Graphs: nv, ne, vertices, edges, has_vertex, has_edge
 import Graphs: is_directed, add_vertex!, add_edge!, rem_vertex!, rem_edge!
