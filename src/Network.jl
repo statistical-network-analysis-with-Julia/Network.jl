@@ -21,7 +21,7 @@ export AbstractNetwork, Network, BipartiteNetwork
 # Graph interface (re-exported from Graphs.jl for convenience)
 export nv, ne, vertices, edges, has_vertex, has_edge
 export neighbors, inneighbors, outneighbors
-export is_directed, is_bipartite
+export is_directed
 
 # Network construction
 export network, network_initialize

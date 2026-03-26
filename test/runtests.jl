@@ -5,13 +5,13 @@ using Graphs
 @testset "Network.jl" begin
     @testset "Network Construction" begin
         # Basic construction
-        net = Network(5)
+        net = network(5)
         @test nv(net) == 5
         @test ne(net) == 0
         @test is_directed(net) == true
 
         # Undirected network
-        net_undir = Network(5; directed=false)
+        net_undir = network(5; directed=false)
         @test is_directed(net_undir) == false
 
         # Using network() function
@@ -25,7 +25,7 @@ using Graphs
     end
 
     @testset "Edge Operations" begin
-        net = Network(5)
+        net = network(5)
 
         # Add edges
         @test add_edge!(net, 1, 2) == true
@@ -45,13 +45,13 @@ using Graphs
         @test add_edge!(net, 1, 1) == false
 
         # Self-loops (when allowed)
-        net_loops = Network(3; loops=true)
+        net_loops = network(3; loops=true)
         @test add_edge!(net_loops, 1, 1) == true
         @test has_edge(net_loops, 1, 1) == true
     end
 
     @testset "Undirected Edge Operations" begin
-        net = Network(5; directed=false)
+        net = network(5; directed=false)
 
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
@@ -65,7 +65,7 @@ using Graphs
     end
 
     @testset "Vertex Attributes" begin
-        net = Network(3)
+        net = network(3)
 
         # Set via Dict
         set_vertex_attribute!(net, :name, Dict(1 => "Alice", 2 => "Bob", 3 => "Carol"))
@@ -92,7 +92,7 @@ using Graphs
     end
 
     @testset "Edge Attributes" begin
-        net = Network(3)
+        net = network(3)
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
 
@@ -111,7 +111,7 @@ using Graphs
     end
 
     @testset "Network Attributes" begin
-        net = Network(3)
+        net = network(3)
 
         set_network_attribute!(net, :title, "Test Network")
         set_network_attribute!(net, :year, 2024)
@@ -126,7 +126,7 @@ using Graphs
     end
 
     @testset "Neighbors" begin
-        net = Network(5)
+        net = network(5)
         add_edge!(net, 1, 2)
         add_edge!(net, 1, 3)
         add_edge!(net, 4, 1)
@@ -137,7 +137,7 @@ using Graphs
     end
 
     @testset "Matrix Conversion" begin
-        net = Network(3)
+        net = network(3)
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
         add_edge!(net, 3, 1)
@@ -157,7 +157,7 @@ using Graphs
     end
 
     @testset "Edge List Conversion" begin
-        net = Network(3)
+        net = network(3)
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
 
@@ -196,7 +196,7 @@ using Graphs
 
     @testset "Network Density" begin
         # Complete directed graph
-        net = Network(3)
+        net = network(3)
         add_edge!(net, 1, 2)
         add_edge!(net, 1, 3)
         add_edge!(net, 2, 1)
@@ -207,14 +207,14 @@ using Graphs
         @test network_density(net) == 1.0  # 6 edges / 6 possible
 
         # Partial network
-        net2 = Network(3)
+        net2 = network(3)
         add_edge!(net2, 1, 2)
         add_edge!(net2, 2, 3)
         @test network_density(net2) ≈ 2/6
     end
 
     @testset "Induced Subgraph" begin
-        net = Network(5)
+        net = network(5)
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
         add_edge!(net, 3, 4)
@@ -231,7 +231,7 @@ using Graphs
     end
 
     @testset "Neighborhood" begin
-        net = Network(5)
+        net = network(5)
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
         add_edge!(net, 3, 4)
@@ -261,7 +261,7 @@ using Graphs
     end
 
     @testset "Vertex Permutation" begin
-        net = Network(3)
+        net = network(3)
         add_edge!(net, 1, 2)
         add_edge!(net, 2, 3)
         set_vertex_attribute!(net, :name, Dict(1 => "A", 2 => "B", 3 => "C"))

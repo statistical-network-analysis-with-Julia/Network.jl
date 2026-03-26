@@ -1,5 +1,17 @@
 # Network.jl
 
+
+[![Network Analysis](https://img.shields.io/badge/Network-Analysis-orange.svg)](https://github.com/statistical-network-analysis-with-Julia/Network.jl)
+[![Build Status](https://github.com/statistical-network-analysis-with-Julia/Network.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/statistical-network-analysis-with-Julia/Network.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://statistical-network-analysis-with-Julia.github.io/Network.jl/stable/)
+[![Documentation](https://img.shields.io/badge/docs-dev-blue.svg)](https://statistical-network-analysis-with-Julia.github.io/Network.jl/dev/)
+[![Julia](https://img.shields.io/badge/Julia-1.9+-purple.svg)](https://julialang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<p align="center">
+  <img src="docs/src/assets/logo.svg" alt="Network.jl icon" width="160">
+</p>
+
 Core network data structures for the StatNet Julia ecosystem.
 
 ## Overview
@@ -12,7 +24,7 @@ This package is a Julia port of the R `network` package from the StatNet collect
 
 ```julia
 using Pkg
-Pkg.add(url="https://github.com/Statistical-network-analysis-with-Julia/Network.jl")
+Pkg.add(url="https://github.com/statistical-network-analysis-with-Julia/Network.jl")
 ```
 
 ## Features
@@ -121,6 +133,19 @@ add_edge!(net, i, j)
 rem_edge!(net, i, j)
 ```
 
+## Documentation
+
+For more detailed documentation, see:
+
+- [Stable Documentation](https://statistical-network-analysis-with-Julia.github.io/Network.jl/stable/)
+- [Development Documentation](https://statistical-network-analysis-with-Julia.github.io/Network.jl/dev/)
+
+## References
+
+1. Butts, C.T. (2008). network: A Package for Managing Relational Data in R. *Journal of Statistical Software*, 24(2), 1-36.
+
+2. Butts, C.T. (2024). network: Classes for Relational Data. R package. [https://cran.r-project.org/package=network](https://cran.r-project.org/package=network)
+
 ## License
 
-MIT License
+MIT License - see [LICENSE](LICENSE) for details.

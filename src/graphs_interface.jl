@@ -92,8 +92,8 @@ Graphs.is_directed(net::BipartiteNetwork) = net.network.directed
 
 Check if the network is bipartite (two-mode).
 """
-is_bipartite(net::Network) = !isnothing(net.bipartite)
-is_bipartite(net::BipartiteNetwork) = true
+Graphs.is_bipartite(net::Network) = !isnothing(net.bipartite)
+Graphs.is_bipartite(net::BipartiteNetwork) = true
 
 # ============================================================================
 # Edge Type
@@ -251,7 +251,7 @@ end
 Return neighbors of vertex v.
 For directed networks, returns outgoing neighbors.
 """
-function Graphs.neighbors(net::Network, v)
+function Graphs.neighbors(net::Network, v::Integer)
     if net.directed
         return Graphs.outneighbors(net.graph, v)
     else
